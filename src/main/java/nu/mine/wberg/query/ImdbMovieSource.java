@@ -9,6 +9,10 @@ public class ImdbMovieSource implements MovieSource {
     }
 
     public List<MovieData> getMovieData(String movieName) {
+        if (null == movieName || movieName.isEmpty()) {
+            throw new IllegalArgumentException("No movie name was specified");
+        }
+
         return new ArrayList<MovieData>();
     }
 
