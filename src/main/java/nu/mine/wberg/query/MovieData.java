@@ -7,7 +7,10 @@ public class MovieData {
     private int year;
 
     // could use a builder here but there are only 3 fields
-    public MovieData() {
+    public MovieData(String name, String director, int year) {
+        this.name = name;
+        this.director = director;
+        this.year = year;
     }
 
     public String getName() {
