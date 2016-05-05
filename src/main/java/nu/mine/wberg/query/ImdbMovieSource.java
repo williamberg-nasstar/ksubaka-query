@@ -3,6 +3,7 @@ package nu.mine.wberg.query;
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
+import nu.mine.wberg.query.model.ImdbResponse;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,9 +20,6 @@ public class ImdbMovieSource implements MovieSource {
 
     private static final Pattern DIRECTOR_NAME = Pattern.compile("<a href='.*'>(.*)</a>");
     private static final String QUERY = "http://www.imdb.com/xml/find?json=1&nr=1&tt=on&q={movie}";
-
-    public ImdbMovieSource() {
-    }
 
     public List<MovieData> getMovieData(String movieName) {
         if (null == movieName || movieName.isEmpty()) {
@@ -44,7 +42,8 @@ public class ImdbMovieSource implements MovieSource {
                 continue;
             }
 
-            String year = title.getDescription().substring(0, 4);
+            // TODO what if parseInt throws?
+            int year = Integer.parseInt(title.getDescription().substring(0, 4));
             String director;
             Matcher directorMatcher = DIRECTOR_NAME.matcher(title.getDescription());
             if (directorMatcher.find()) {
@@ -56,7 +55,7 @@ public class ImdbMovieSource implements MovieSource {
 
             result.add(new MovieData(title.getTitle(),
                     director,
-                    Integer.parseInt(year)));
+                    year));
         }
         return result;
     }

@@ -1,4 +1,4 @@
-package nu.mine.wberg.query;
+package nu.mine.wberg.query.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
