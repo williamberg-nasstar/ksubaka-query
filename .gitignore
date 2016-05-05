@@ -1,3 +1,4 @@
 .idea/
 out/
 ksubaka-query.iml
+target/
