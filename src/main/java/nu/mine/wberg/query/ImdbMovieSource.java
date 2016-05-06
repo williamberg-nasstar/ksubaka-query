@@ -42,6 +42,7 @@ public class ImdbMovieSource implements MovieSource {
                 continue;
             }
 
+            String movieTitle = title.getTitle();
             String year = title.getDescription().substring(0, 4);
             String director;
             Matcher directorMatcher = DIRECTOR_NAME.matcher(title.getDescription());
@@ -52,9 +53,7 @@ public class ImdbMovieSource implements MovieSource {
                 director = "Unknown";
             }
 
-            result.add(new MovieData(title.getTitle(),
-                    director,
-                    year));
+            result.add(new MovieData(movieTitle, director, year));
         }
         return result;
     }

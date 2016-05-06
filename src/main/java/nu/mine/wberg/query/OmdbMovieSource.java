@@ -35,8 +35,8 @@ public class OmdbMovieSource implements MovieSource {
                 continue;
             }
 
+            String title = searchResult.getTitle();
             String year = searchResult.getYear();
-
             HttpResponse<OmdbTitleResponse> omdbTitleResponse;
             try {
                 omdbTitleResponse = Unirest.get(TITLE_QUERY)
@@ -48,9 +48,7 @@ public class OmdbMovieSource implements MovieSource {
             OmdbTitleResponse titleResponseBody = omdbTitleResponse.getBody();
             String director = titleResponseBody.getDirector();
 
-            result.add(new MovieData(searchResult.getTitle(),
-                    director,
-                    year));
+            result.add(new MovieData(title, director, year));
         }
         return result;
     }
