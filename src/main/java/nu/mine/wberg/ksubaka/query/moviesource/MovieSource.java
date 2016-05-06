@@ -1,4 +1,4 @@
-package nu.mine.wberg.query;
+package nu.mine.wberg.ksubaka.query.moviesource;
 
 import java.util.List;
 

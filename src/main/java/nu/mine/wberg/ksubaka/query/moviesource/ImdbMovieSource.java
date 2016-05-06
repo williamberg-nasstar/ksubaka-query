@@ -1,9 +1,9 @@
-package nu.mine.wberg.query;
+package nu.mine.wberg.ksubaka.query.moviesource;
 
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
-import nu.mine.wberg.query.model.ImdbResponse;
+import nu.mine.wberg.ksubaka.query.moviesource.model.ImdbResponse;
 
 import java.util.ArrayList;
 import java.util.List;

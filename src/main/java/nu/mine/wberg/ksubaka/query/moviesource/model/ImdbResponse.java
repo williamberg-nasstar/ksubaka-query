@@ -1,4 +1,4 @@
-package nu.mine.wberg.query.model;
+package nu.mine.wberg.ksubaka.query.moviesource.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

@@ -1,10 +1,10 @@
-package nu.mine.wberg.query;
+package nu.mine.wberg.ksubaka.query.moviesource;
 
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
-import nu.mine.wberg.query.model.OmdbSearchResponse;
-import nu.mine.wberg.query.model.OmdbTitleResponse;
+import nu.mine.wberg.ksubaka.query.moviesource.model.OmdbSearchResponse;
+import nu.mine.wberg.ksubaka.query.moviesource.model.OmdbTitleResponse;
 
 import java.util.ArrayList;
 import java.util.List;
