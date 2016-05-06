@@ -42,8 +42,7 @@ public class ImdbMovieSource implements MovieSource {
                 continue;
             }
 
-            // TODO what if parseInt throws?
-            int year = Integer.parseInt(title.getDescription().substring(0, 4));
+            String year = title.getDescription().substring(0, 4);
             String director;
             Matcher directorMatcher = DIRECTOR_NAME.matcher(title.getDescription());
             if (directorMatcher.find()) {

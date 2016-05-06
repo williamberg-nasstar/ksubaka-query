@@ -35,8 +35,7 @@ public class OmdbMovieSource implements MovieSource {
                 continue;
             }
 
-            // TODO what if parseInt throws?
-            int year = Integer.parseInt(searchResult.getYear());
+            String year = searchResult.getYear();
 
             HttpResponse<OmdbTitleResponse> omdbTitleResponse;
             try {
